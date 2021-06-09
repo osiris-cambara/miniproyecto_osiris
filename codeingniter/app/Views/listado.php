@@ -26,7 +26,22 @@
               </form>
             </div>
         </div>
-      </div>
+      <div class="row">
+      <div class="col-5m-12">
+        <div class="table table-responsive">
+          <table class="table table-hover table-bordered">
+            <tr>
+              <th>nombre</th>
+              <th>apelido paterno</th>
+              <th>apellido materno</th>
+              <th>editar</th>
+              <th>eliminar</th>
+            </tr>
+            <?php foreach ($datos in $dato):?>
+            <tr>
+              <th>
+                
+             
     <h1>Hello, world!</h1>
 
     <!-- Optional JavaScript -->
