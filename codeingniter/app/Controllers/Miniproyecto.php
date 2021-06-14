@@ -1,11 +1,17 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\DatosModel;
 
 class Miniproyecto extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$model= new DatosModel():
+		$datos = $model->listar ();
+		$data=[
+			"datos" =>$datos
+			]
+		return view('listado',$data);
 	}
 }
