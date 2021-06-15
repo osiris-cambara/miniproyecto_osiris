@@ -11,7 +11,7 @@ class Miniproyecto extends BaseController
 		$datos = $model->listar ();
 		$data = [
 			"datos" =>$datos
-			]
+			];
 		return view('listado',$data);
 	}
 }
