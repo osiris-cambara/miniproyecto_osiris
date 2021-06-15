@@ -1,6 +1,6 @@
-<?
+<?php
 namespace App\Models;
-use codeIgniter\Model;
+use codeIgniter\Models;
 
 class DatosModel extends Model {
   public function listar () {
