@@ -1,8 +1,8 @@
 <?php
 namespace App\Models;
-use codeIgniter\model;
+use codeIgniter\Model;
 
-class DatosModel.php extends Model {
+class DatosModel extends Model {
   public function listar () {
     $n = $this->db->query("SELECT * from persona");
     return $n->getResult();
