@@ -15,7 +15,7 @@ class General extends BaseController
 		];
 		return view('listado',$data);
 	}
-}
+
         public function obtenerDatos($id) {
 		$model = new DatosModel();
 		$data = ["id" => $id];
@@ -61,7 +61,7 @@ class General extends BaseController
 		}else{ 
 			return redirect()->to(base_url('/index.php'))->with('mensaje','3');
 		}
-	}
+	
         public function eliminar($idPersona){
 		$model = new DatosModel();
 		$id = [ "id" => $idPersona];
@@ -73,4 +73,4 @@ class General extends BaseController
 			return redirect()->to(base_url('/index.php'))->with('mensaje','5');
 		}
 	}
-}
+
