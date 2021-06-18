@@ -73,4 +73,3 @@ class General extends BaseController
 			return redirect()->to(base_url('/index.php'))->with('mensaje','5');
 		}
 	}
-
