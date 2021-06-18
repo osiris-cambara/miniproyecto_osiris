@@ -6,9 +6,9 @@ class General extends BaseController
 {
 	public function index()
 	{
-		$model = new DatosModel();
+		$gModel = new DatosModel();
 		$mensaje = session('mensaje');
-		$datos = $model->listarTodo();
+		$datos = $gModel->listarTodo();
 		$data = [
                      "datos" => $datos,
 			"mensaje" => $mensaje
@@ -17,22 +17,22 @@ class General extends BaseController
 	}
 
         public function obtenerDatos($id) {
-		$model = new DatosModel();
+		$gModel = new DatosModel();
 		$data = ["id" => $id];
-		$respuesta = $model ->obtenerInformacion($data);
+		$respuesta = $gModel ->obtenerInformacion($data);
 		
 		$datos = ["datos" => $respuesta];
 		return view('actualizar', $datos);
 		
 	}
         public function insertar(){
-		$model = new DatosModel();
+		$gModel = new DatosModel();
 		$data = [
 			"nombre" => $_POST ['nombre'],
 			"a_paterno" => $_POST ['apaterno'],
 			"a_materno" => $_POST ['materno'],
 		];
-		$respuesta = $model ->insertar($data);
+		$respuesta = $gModel ->insertar($data);
 		
 		if($respuesta > 0){
 			return redirect()->to(base_url('/index.php'))->with('mensaje','0');
@@ -45,7 +45,7 @@ class General extends BaseController
 
 
         public function actualizar(){
-		$model = new DatosModel();
+		$gModel = new DatosModel();
 		$data = [
 			"nombre" => $_POST ['nombre'],
 			"a_paterno" => $_POST ['paterno'],
@@ -54,7 +54,7 @@ class General extends BaseController
 			
 		];
 		$id = ["id" => $_POST['id']];
-		$respuesta = $model->actualizar($data,$id);
+		$respuesta = $gModel->actualizar($data,$id);
 		
 		if($respuesta){
 			return redirect()->to(base_url('/index.php'))->with('mensaje','2');
@@ -63,9 +63,9 @@ class General extends BaseController
 		}
 	
         public function eliminar($idPersona){
-		$model = new DatosModel();
+		$gModel = new DatosModel();
 		$id = [ "id" => $idPersona];
-		$respuesta = $model->eliminar($id);
+		$respuesta = $gModel->eliminar($id);
 		
 		if($respuesta){
 			return redirect()->to(base_url('/index.php'))->with('mensaje','4');
