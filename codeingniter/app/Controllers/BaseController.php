@@ -9,7 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
-/
+/*
  * Class BaseController
  *
  * BaseController provides a convenient place for loading components
@@ -22,14 +22,14 @@ use Psr\Log\LoggerInterface;
 
 class BaseController extends Controller
 {
-    /
+    /*
      * Instance of the main Request object.
      *
      * @var IncomingRequest|CLIRequest
      */
     protected $request;
 
-    /
+    /*
      * An array of helpers to be loaded automatically upon
      * class instantiation. These helpers will be available
      * to all other controllers that extend BaseController.
@@ -38,7 +38,7 @@ class BaseController extends Controller
      */
     protected $helpers = [];
 
-    /
+    /*
      * Constructor.
      *
      * @param RequestInterface  $request
