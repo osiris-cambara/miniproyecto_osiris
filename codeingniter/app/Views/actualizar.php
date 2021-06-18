@@ -1,3 +1,5 @@
+<?php
+$id = $datos[0]
 <!doctype html>
 <html lang="en">
   <head>
