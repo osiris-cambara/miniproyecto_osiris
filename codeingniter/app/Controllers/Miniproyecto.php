@@ -61,7 +61,7 @@ class General extends BaseController
 		}else{ 
 			return redirect()->to(base_url('/index.php'))->with('mensaje','3');
 		}
-	
+	}
         public function eliminar($idPersona){
 		$gModel = new DatosModel();
 		$id = [ "id" => $idPersona];
