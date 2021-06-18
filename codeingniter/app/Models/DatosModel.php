@@ -4,34 +4,34 @@ use CodeIgniter\Model;
 
 class DatosModel extends Model {
      public function obtenerInformacion($data){
-          $model = $this ->db->table('persona');
-          $model-> where($data);
-          return $model->getResultArray();
+          $gModel = $this ->db->table('persona');
+          $gModel-> where($data);
+          return $gModel->get()->getResultArray();
      }
      
     
      public function listarTodo() {
-       $model = $this->db->query("SELECT * from persona");
-         return $model->getResult();
+       $gModel = $this->db->query("SELECT * from persona");
+         return $gModel->getResult();
      }
      
      public function insertar($data){
-          $model = $this ->db->table('persona');
-          $model-> insert($data);
+          $gModel = $this ->db->table('persona');
+          $gModel-> insert($data);
           return $this->db->insertID();
      }
      
      public function actualizar($data, $id){
-          $model = $this ->db->table('persona');
-          $model->set($data);
-          $model->where($id);
-          return $model->update();
+          $gModel = $this ->db->table('persona');
+          $gModel->set($data);
+          $gModel->where($id);
+          return $gModel->update();
      }
      
      public function eliminar($id){
-          $model = $this->db->table('persona');
-          $model -> where($id);
-          return $model -> delete();
+          $gModel = $this->db->table('persona');
+          $gModel -> where($id);
+          return $gModel -> delete();
      }
      
 }
